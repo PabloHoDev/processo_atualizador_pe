@@ -1,0 +1,1 @@
+#padronização de textos (maiusculo, acentos, espaços, etc)

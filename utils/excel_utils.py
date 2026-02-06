@@ -1,0 +1,1 @@
+#funções auxiliares (busca de colunas, abas)
