@@ -1,0 +1,1 @@
+# Maiúsculo, trim, limpeza
