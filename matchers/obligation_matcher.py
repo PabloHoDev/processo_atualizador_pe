@@ -1,1 +1,0 @@
-#identificações de obrigações existentes

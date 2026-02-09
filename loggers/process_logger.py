@@ -1,1 +1,0 @@
-#geração de log estruturado do processo
