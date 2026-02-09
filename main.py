@@ -1,1 +1,0 @@
-# Orquestrador do processo principal
