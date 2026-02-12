@@ -22,9 +22,9 @@ ABA_RPE = "RPE"
 
 # Abas que NÃO devem ser consideradas na Base Geral PE
 ABAS_IGNORADAS_BASE_PE = [
-    "LOG",
-    "RESUMO",
-    "CONFIG",
+    "DADOS DE VALIDAÇÃO",
+    "META INTELIGENTE",
+    "LAKE",
 ]
 
 # ===============================
