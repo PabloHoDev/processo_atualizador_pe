@@ -1,3 +1,16 @@
+📌 Ordem Oficial de Implementação
+
+1️⃣ configuracoes
+2️⃣ utilitarios_excel
+3️⃣ padronizacao_dados
+4️⃣ leituras_excel
+5️⃣ comparadores_base
+6️⃣ validacoes_negocio
+7️⃣ insercao_base_pe
+8️⃣ logs_processo
+9️⃣ executar_processo
+🔟 testes finais
+
 📌 PLANO DE EXECUÇÃO — processo_novas_obrigacoes_rpe
 🎯 Objetivo
 
