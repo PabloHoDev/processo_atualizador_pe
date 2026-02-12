@@ -3,15 +3,15 @@
 
 Implementar o pipeline completo de inserção de novas obrigações (RPE → Base Geral PE) em Python, garantindo:
 
-Segurança
+-Segurança
 
-Idempotência
+-Idempotência
 
-Performance
+-Performance
 
-Rastreabilidade
+-Rastreabilidade
 
-Separação de responsabilidades
+-Separação de responsabilidades
 
 🔵 FASE 1 — Preparação do Ambiente (Fundação Técnica)
 1.1 Criar o repositório
@@ -44,6 +44,7 @@ Criar requirements.txt
 
 🔵 FASE 2 — Construção da Base Estrutural (Infraestrutura)
 Ordem correta de implementação:
+
 2.1 configuracoes/parametros_processo.py
 
 Começamos aqui porque:
