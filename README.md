@@ -247,7 +247,7 @@ processo_novas_obrigacoes_rpe/
 
 ## 14. Responsabilidade de Cada Camada
 
-### 14.1 main.py (Orquestração)
+### 14.1 excecutar_processo.py (Orquestração)
 
 * Controla o fluxo completo do processo
 * Chama os módulos na ordem correta
@@ -255,17 +255,17 @@ processo_novas_obrigacoes_rpe/
 
 ---
 
-### 14.2 loaders
+### 14.2 leitura_excel
 
 **Responsabilidade:** leitura segura dos arquivos
 
-* `load_rpe.py`
+* `ler_planilha_rpe.py`
 
   * Abre a planilha RPE
   * Localiza colunas por nome (não por posição)
   * Retorna DataFrame padronizado
 
-* `load_base_pe.py`
+* `ler_planilha_base_geral_pe.py`
 
   * Abre a Base Geral PE
   * Identifica abas válidas
@@ -273,7 +273,8 @@ processo_novas_obrigacoes_rpe/
 
 ---
 
-### 14.3 normalizers
+### 14.3 padronizacao_dados
+* `normalizar_texto.py`
 
 **Responsabilidade:** padronização de dados
 
@@ -283,7 +284,8 @@ processo_novas_obrigacoes_rpe/
 
 ---
 
-### 14.4 validators
+### 14.4 validacao_negocio
+* `validar_dados_rpe.py`
 
 **Responsabilidade:** garantir integridade dos dados
 
@@ -304,7 +306,8 @@ Define se a linha é:
 
 ---
 
-### 14.5 matchers
+### 14.5 comparadores_base
+* `comparar_obg_existente.py`
 
 **Responsabilidade:** evitar duplicidades
 
@@ -314,7 +317,8 @@ Define se a linha é:
 
 ---
 
-### 14.6 inserters
+### 14.6 insercao_base_pe
+* `inserir_novas_obgs.py`
 
 **Responsabilidade:** inserir dados corretamente
 
@@ -324,7 +328,8 @@ Define se a linha é:
 
 ---
 
-### 14.7 loggers
+### 14.7 log_processo
+* `registrar_log_processo.py`
 
 **Responsabilidade:** rastreabilidade total
 
