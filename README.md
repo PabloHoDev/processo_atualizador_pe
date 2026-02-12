@@ -7,7 +7,7 @@ iremos criar algumas automações em python para os processos da pendência espe
 
 ## 1. Visão Geral
 
-A macro `AtualizarBasePE` tem como objetivo sincronizar os campos **Área da Pendência** e **Status** das abas do arquivo **Backlog_2024 e 2025.xlsx** com base em uma **base unificada** (`RPE.csv`).
+A macro `AtualizarBasePE` tem como objetivo sincronizar os campos **Área da Pendência** e **Status** das abas do arquivo **Base Geral PE.xlsx**(dependendo do ano a Base pode ter o nome diferente, fazendo necessário a atualização no script para funcionar) com base em uma **base unificada** (`RPE.csv`).
 
 A atualização é **controlada**, **rastreável por log** e **não destrutiva**, garantindo que apenas valores diferentes e não vazios sejam sobrescritos.
 
@@ -41,7 +41,7 @@ A atualização é **controlada**, **rastreável por log** e **não destrutiva**
 
 | Tipo    | Nome                       |
 | ------- | -------------------------- |
-| Destino | `Backlog_2024 e 2025.xlsx` |
+| Destino | `Base Geral PE.xlsx` |
 | Base    | `RPE.csv`                  |
 
 ### 3.2 Abas obrigatórias
@@ -213,32 +213,33 @@ O objetivo é **identificar, validar e inserir novas obrigações** presentes na
 ```
 processo_novas_obrigacoes_rpe/
 │
-├── executar_processo.py
+├── executar_processo.py          # Orquestrador do processo
 │
 ├── configuracoes/
-│   └── parametros_processo.py
+│   └── parametros_processo.py    # Caminhos, nomes de abas, colunas e regras
 │
 ├── leituras_excel/
-│   ├── ler_planilha_rpe.py
-│   └── ler_base_geral_pe.py
+│   ├── ler_planilha_rpe.py       # Leitura da planilha RPE
+│   └── ler_base_geral_pe.py      # Leitura da Base Geral PE
 │
 ├── padronizacao_dados/
-│   └── normalizar_textos.py
+│   └── normalizar_textos.py      # Maiúsculo, trim, limpeza
 │
 ├── validacoes_negocio/
-│   └── validar_dados_rpe.py
+│   └── validar_dados_rpe.py      # Validação de campos obrigatórios
 │
 ├── comparadores_base/
-│   └── comparar_obrigacoes_existentes.py
+│   └── comparar_obrigacoes_existentes.py   # Evita duplicidade
 │
 ├── insercao_base_pe/
-│   └── inserir_novas_obrigacoes.py
+│   └── inserir_novas_obrigacoes.py         # Inserção nas abas corretas
 │
 ├── logs_processo/
-│   └── registrar_log_processo.py
+│   └── registrar_log_processo.py           # Log estruturado
 │
 └── utilitarios_excel/
-    └── funcoes_excel.py
+    └── funcoes_excel.py                    # Busca de colunas, abas, helpers
+
 
 ```
 
