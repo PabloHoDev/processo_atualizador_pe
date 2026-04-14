@@ -80,55 +80,23 @@ Evite retrabalho
 
 🧩 Diagrama Visual — Fluxo de Construção dos Algoritmos
 
-📁 INÍCIO DO DESENVOLVIMENTO
-        │
-        ▼
-┌───────────────────────────────┐
-│ 1. utilitarios_excel          │
-│ (Base técnica)                │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│ 2. leituras_excel             │
-│ (Entrada de dados)            │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│ 3. padronizacao_dados         │
-│ (Normalização)                │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│ 4. validacoes_negocio         │
-│ (Filtro de qualidade)         │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│ 5. comparadores_base          │
-│ (Identifica novos vs existentes) │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│ 6. insercao_base_pe           │
-│ (Escrita na base)             │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│ 7. logs_processo              │
-│ (Rastreabilidade)             │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│ 8. executar_processo.py       │
-│ (Orquestração final)          │
-└───────────────────────────────┘
-                │
-                ▼
-        🚀 SISTEMA COMPLETO
+## 🔄 Fluxo de Construção do Sistema
+
+Este fluxo representa a ordem de desenvolvimento dos módulos e como cada parte do sistema se conecta para formar uma solução completa, organizada e escalável.
+
+```mermaid
+flowchart TD
+
+    A([📁 Início do Desenvolvimento])
+
+    B[🔧 utilitarios_excel<br/>Base técnica de manipulação Excel]
+    C[📥 leituras_excel<br/>Entrada e leitura de dados]
+    D[🧹 padronizacao_dados<br/>Normalização e limpeza]
+    E[✔ validacoes_negocio<br/>Validação e qualidade dos dados]
+    F[🧠 comparadores_base<br/>Identificação de registros novos e existentes]
+    G[📌 insercao_base_pe<br/>Inserção estruturada na base]
+    H[🧾 logs_processo<br/>Rastreabilidade e auditoria]
+    I[🚀 executar_processo.py<br/>Orquestração do fluxo]
+    J([✅ Sistema Completo e Operacional])
+
+    A --> B --> C --> D --> E --> F --> G --> H --> I --> J
