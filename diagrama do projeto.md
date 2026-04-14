@@ -79,22 +79,56 @@ Evite retrabalho
 
 
 🧩 Diagrama Visual — Fluxo de Construção dos Algoritmos
-flowchart TD
 
-A[📁 Início do Projeto] --> B[🔧 utilitarios_excel<br/>Base técnica de manipulação Excel]
-
-B --> C[📥 leituras_excel<br/>Leitura da RPE e Base Geral PE]
-
-C --> D[🧹 padronizacao_dados<br/>Normalização de textos]
-
-D --> E[✔ validacoes_negocio<br/>Validação de dados]
-
-E --> F[🧠 comparadores_base<br/>Identificação de novos vs existentes]
-
-F --> G[📌 insercao_base_pe<br/>Inserção nas abas corretas]
-
-G --> H[🧾 logs_processo<br/>Registro estruturado do processo]
-
-H --> I[🚀 executar_processo.py<br/>Orquestração completa]
-
-I --> J[✅ Sistema Finalizado e Operacional]
+📁 INÍCIO DO DESENVOLVIMENTO
+        │
+        ▼
+┌───────────────────────────────┐
+│ 1. utilitarios_excel          │
+│ (Base técnica)                │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ 2. leituras_excel             │
+│ (Entrada de dados)            │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ 3. padronizacao_dados         │
+│ (Normalização)                │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ 4. validacoes_negocio         │
+│ (Filtro de qualidade)         │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ 5. comparadores_base          │
+│ (Identifica novos vs existentes) │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ 6. insercao_base_pe           │
+│ (Escrita na base)             │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ 7. logs_processo              │
+│ (Rastreabilidade)             │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ 8. executar_processo.py       │
+│ (Orquestração final)          │
+└───────────────────────────────┘
+                │
+                ▼
+        🚀 SISTEMA COMPLETO
