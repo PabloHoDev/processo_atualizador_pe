@@ -47,10 +47,10 @@ Cada módulo é um instrumento.
 Se um instrumento falha → ele precisa saber lidar.
 
 🔐 Responsabilidades Críticas
-Garantir ordem correta de execução
-Interromper processo em caso de erro crítico
-Registrar falhas no log
-Evitar execução parcial inconsistente
+- Garantir ordem correta de execução
+- Interromper processo em caso de erro crítico
+- Registrar falhas no log
+- Evitar execução parcial inconsistente
 🚫 O que NÃO deve existir aqui
 ❌ Validação de dados
 ❌ Comparação de registros
@@ -60,10 +60,10 @@ Evitar execução parcial inconsistente
 Tudo isso pertence aos módulos.
 
 🧪 Critérios de Teste
-Execução completa com sucesso
-Execução com erro de validação
-Execução sem novas obrigações
-Execução com múltiplas inserções
+- Execução completa com sucesso
+- Execução com erro de validação
+- Execução sem novas obrigações
+- Execução com múltiplas inserções
 📌 Conclusão
 
 executar_processo.py não faz o trabalho pesado.
