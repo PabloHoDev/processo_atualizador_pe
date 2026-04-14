@@ -1,0 +1,127 @@
+📘 Módulo validacoes_negocio
+📌 Propósito
+
+O módulo validacoes_negocio é responsável por garantir que os dados da RPE estejam corretos, completos e aptos para processamento.
+
+Ele atua como um filtro de qualidade, impedindo que dados inválidos avancem no fluxo.
+
+🎯 Responsabilidade Principal
+
+Este módulo deve:
+
+Validar campos obrigatórios
+Identificar dados inconsistentes
+Classificar registros como válidos ou inválidos
+Evitar que erros contaminem a Base Geral PE
+⚠️ Problema que resolve
+
+Sem validação, o sistema pode:
+
+Inserir obrigações incompletas
+Inserir dados errados
+Gerar inconsistência na base
+Comprometer análises futuras
+
+Esse módulo protege o sistema contra dados ruins.
+
+📂 Estrutura do Módulo
+validacoes_negocio/
+└── validar_dados_rpe.py
+📄 Arquivo: validar_dados_rpe.py
+
+Responsável por aplicar regras de validação nos dados da RPE.
+
+🔄 Fluxo de Funcionamento
+1. Receber dados já padronizados
+2. Verificar colunas obrigatórias
+3. Validar conteúdo dos campos
+4. Classificar registros
+5. Retornar resultado estruturado
+🧠 Tipos de Validação
+✔ Validação Estrutural
+
+Verifica se os dados possuem:
+
+Coluna "OBRIGAÇÃO"
+Coluna "UF PRESTADOR"
+Estrutura mínima obrigatória
+✔ Validação de Conteúdo
+
+Verifica:
+
+Campos obrigatórios preenchidos
+Valores válidos (não nulos, não vazios)
+Consistência básica dos dados
+✔ Validação de Tipos (quando aplicável)
+Data Depósito válida
+Valor Depósito numérico
+
+(Controlado por flags em configuracoes)
+
+📊 Classificação dos Registros
+
+Cada linha deve ser classificada como:
+
+VÁLIDO → pode seguir o fluxo
+AVISO → pode seguir, mas com alerta
+ERRO → deve ser bloqueado
+📌 Estrutura de Retorno Esperada
+
+O módulo deve retornar algo como:
+
+{
+    "status": "VALIDO",
+    "erros": [],
+    "avisos": []
+}
+
+Ou, em lote:
+
+[
+    { "linha": 1, "status": "VALIDO" },
+    { "linha": 2, "status": "ERRO", "mensagem": "UF vazia" }
+]
+🚫 O que NÃO deve existir aqui
+❌ Inserção de dados
+❌ Comparação com base
+❌ Leitura de planilhas
+❌ Padronização de texto
+❌ Decisão de aba
+
+Esse módulo apenas valida.
+
+🔄 Dependências
+
+Depende de:
+
+configuracoes → colunas obrigatórias
+padronizacao_dados → dados já limpos
+🧪 Critérios de Teste
+
+Testar com:
+
+Registro completo (válido)
+Registro com campo obrigatório vazio
+Registro com valor inválido
+Registro com data inválida
+Registro com múltiplos erros
+🔐 Garantias do Módulo
+Nenhum dado inválido segue no fluxo
+Erros são identificados antes da inserção
+O sistema se mantém consistente
+🚀 Impacto no Sistema
+
+Se esse módulo for bem feito:
+
+O sistema se torna confiável
+A base se mantém limpa
+O processo ganha credibilidade
+
+Se for mal feito:
+
+Você automatiza erro
+📌 Conclusão
+
+O módulo validacoes_negocio é o guardião da qualidade dos dados.
+
+Ele define o que pode ou não entrar no sistema.
